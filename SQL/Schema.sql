@@ -15,7 +15,7 @@ USE engine_management;
 -- Create the Engine Model table
 drop table if exists engine_model;
 create table engine_model(
-engine_model_id int NOT NULL AUTO_INCREMENT,
+    engine_model_id int NOT NULL AUTO_INCREMENT,
     model_name varchar(50) NOT NULL,
     active bit(1) not null,
     PRIMARY KEY (engine_model_id)
@@ -40,6 +40,8 @@ customer_id int NOT NULL AUTO_INCREMENT,
     country_id int NOT NULL,
     PRIMARY KEY (customer_id),
     FOREIGN KEY (country_id) REFERENCES country(country_id)
+    
+    -- create index for company name
     );
 
 -- Create the Rate Table
@@ -62,6 +64,7 @@ create table engine(
     disposal_date date,
     PRIMARY KEY (engine_id),
 	FOREIGN KEY (engine_model_id) REFERENCES engine_model(engine_model_id)
+  -- create index for Engine Serial Number
     );
 
 -- Create the Lease Table
@@ -76,6 +79,8 @@ create table lease(
     PRIMARY KEY (lease_id),
     FOREIGN KEY (engine_id) REFERENCES engine(engine_id),
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+    
+    -- create index for lease reference
     );
     
 -- Create the Operation Table
@@ -121,6 +126,6 @@ create table maintenance_reserve_billing(
     );    
 --     
 
--- add indexes that would be useful here
+
     
 

@@ -35,9 +35,7 @@ insert into usage_rate (from_cycle, to_cycle, rate) values (26,30,270);
 insert into usage_rate (from_cycle, to_cycle, rate) values (31,999,275);
 
 
-insert into engine (engine_serial_number, engine_model_id, enrolement_date, disposal_date) 
-values ('123456', (select engine_model_id from engine_model where model_name = 'CFM56-5A'), STR_TO_DATE('01/01/2013', '%d/%m/%Y'), null);
-
+insert into engine (engine_serial_number, engine_model_id, enrolement_date, disposal_date) values ('123456', (select engine_model_id from engine_model where model_name = 'CFM56-5A'), STR_TO_DATE('01/01/2013', '%d/%m/%Y'), null);
 insert into engine (engine_serial_number, engine_model_id, enrolement_date, disposal_date) values ('789103', (select engine_model_id from engine_model where model_name = 'CFM56-5B'), STR_TO_DATE('01/01/2003', '%d/%m/%Y'),STR_TO_DATE('01/02/2017', '%d/%m/%Y'));
 insert into engine (engine_serial_number, engine_model_id, enrolement_date, disposal_date) values ('606060', (select engine_model_id from engine_model where model_name = 'CFM56-5C'), STR_TO_DATE('31/01/2013', '%d/%m/%Y'), null);
 insert into engine (engine_serial_number, engine_model_id, enrolement_date, disposal_date) values ('101010', (select engine_model_id from engine_model where model_name = 'CFM56-7B'), STR_TO_DATE('01/02/2010', '%d/%m/%Y'), null);

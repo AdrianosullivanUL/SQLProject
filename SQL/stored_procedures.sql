@@ -11,7 +11,7 @@ DROP PROCEDURE if exists `engine_management`.`check_maintenance_reserve_billing`
 DELIMITER //
  create procedure  check_maintenance_reserve_billing(prm_year int, prm_month int )
 BEGIN
-
+-- Need comments here
 SELECT 	c1.company_name,
 		co1.country_name,
 		l1.lease_reference,
@@ -155,7 +155,7 @@ select 'Hello world' ;
 		  SIGNAL SQLSTATE '48000'
           SET MESSAGE_TEXT = loc_message;
     else
-		select loc_usage_rate_id;
+		  select loc_usage_rate_id;
 		-- Do the calculations for charges
 		set loc_usage_charge = loc_rate * loc_cycles;
         if (loc_harsh_environment) then
