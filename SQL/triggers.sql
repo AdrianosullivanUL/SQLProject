@@ -1,5 +1,5 @@
 -- -------------------------------------------------------
--- Create triggers
+-- Create triggers for engine_management
 -- -------------------------------------------------------
 -- Select the schema
 USE engine_management;
@@ -41,9 +41,8 @@ delimiter ;
 
 -- Create before update for engine trigger
 -- -------------------------------------------------------
-drop trigger if exists engine_management.
+drop trigger if exists engine_management.before_engine_update;
 
-;
 delimiter |
 create trigger before_engine_update
 before update on engine 
@@ -62,8 +61,6 @@ before update on engine
 		if overlap_count > 0 then                   
 			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "this serial number enrollment/disposal period overlaps with an existing entry for this serial number";
 		end if;
--- TODO 
--- engine_usage check operation ddate ranges
 end
 |
 delimiter ;
