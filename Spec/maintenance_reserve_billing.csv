@@ -1,0 +1,6 @@
+maintenance_reserve_billing_id,engine_usage_id,usage_rate_id,rate,harsh_environment,harsh_environment_loading,usage_charge,harsh_environment_charge,billing_processed
+1,7,5,270.00,1,0.10,8100.00,810.00,0
+2,6,5,270.00,1,0.15,8100.00,1215.00,0
+3,4,3,260.00,0,NULL,5200.00,0.00,0
+4,3,2,255.00,0,NULL,3825.00,0.00,0
+5,2,1,250.00,0,NULL,2500.00,0.00,0
